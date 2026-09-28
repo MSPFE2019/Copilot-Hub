@@ -1,0 +1,43 @@
+name: Validate release package
+
+on:
+  push:
+    paths:
+      - 'CopilotHub-v*.zip'
+      - '.github/workflows/validate-package.yml'
+  pull_request:
+    paths:
+      - 'CopilotHub-v*.zip'
+      - '.github/workflows/validate-package.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Run Test-CopilotHubPackage.ps1 on each release zip
+        shell: pwsh
+        run: |
+          $zips = @(Get-ChildItem -Filter 'CopilotHub-v*.zip')
+          if ($zips.Count -eq 0) { throw 'No CopilotHub-v*.zip found at the repository root.' }
+          $failed = 0
+          foreach ($zip in $zips) {
+            Write-Host "::group::$($zip.Name)"
+            $dest = Join-Path $env:RUNNER_TEMP $zip.BaseName
+            Expand-Archive $zip.FullName -DestinationPath $dest -Force
+            $check = Get-ChildItem $dest -Recurse -Filter 'Test-CopilotHubPackage.ps1' | Select-Object -First 1
+            if (-not $check) {
+              Write-Host "::error::$($zip.Name) does not contain Test-CopilotHubPackage.ps1"
+              $failed++
+            } else {
+              & $check.FullName -Path $check.DirectoryName
+              if ($LASTEXITCODE -ne 0) { $failed++ }
+            }
+            Write-Host "::endgroup::"
+          }
+          if ($failed -gt 0) { exit 1 }
