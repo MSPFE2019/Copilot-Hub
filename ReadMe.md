@@ -8,7 +8,7 @@
 
 > **Distribution note:** The supported release artifact is `CopilotHub-v5.1.zip`, attached to the v5.1.0 release. Extract it and run the scripts from the extracted `CopilotHub` folder. This README alone is not a deployable copy of the template.
 
-> **Preview:** [`docs/mockup/index.html`](docs/mockup/index.html) is a clickable mockup of every page and list in a deployed Copilot Hub, generated from the same content as the template. Download the file and open it in a browser.
+> **Preview:** [See the clickable mockup](https://mspfe2019.github.io/Copilot-Hub/mockup/) of every page and list in a deployed Copilot Hub, generated from the same content as the template. The source file is [`docs/mockup/index.html`](docs/mockup/index.html).
 
 **Two design principles:**
 
