@@ -1,14 +1,14 @@
 # Copilot Hub — SharePoint Site Template
 
-> A SharePoint communication-site template for organizations rolling out **Copilot Chat**, **Microsoft Copilot** (formerly Microsoft 365 Copilot), the **Researcher** and **Analyst** agents, **agents in Copilot**, **Microsoft Copilot Studio**, **Microsoft Foundry** (formerly Azure AI Foundry), and **GitHub Copilot**. It started from the [Power Platform adoption hub template](https://learn.microsoft.com/en-us/power-platform/guidance/adoption/sharepoint-site-template) and has been rewritten for the Copilot product family.
+> A SharePoint communication-site template for organizations rolling out **Copilot Chat**, **Microsoft Copilot** (formerly Microsoft 365 Copilot), **Copilot Cowork**, SharePoint agents, the **Researcher** and **Analyst** agents, **agents in Copilot**, **Microsoft Copilot Studio**, **Microsoft Foundry** (formerly Azure AI Foundry), and **GitHub Copilot**. It started from the [Power Platform adoption hub template](https://learn.microsoft.com/en-us/power-platform/guidance/adoption/sharepoint-site-template) and has been rewritten for the Copilot product family.
 
 [![PnP PowerShell](https://img.shields.io/badge/PnP.PowerShell-1.12.x-0078D4?logo=powershell&logoColor=white)](https://pnp.github.io/powershell/)
 [![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-038387?logo=microsoftsharepoint&logoColor=white)](https://learn.microsoft.com/en-us/sharepoint/)
-[![Version](https://img.shields.io/badge/version-5.1.0-7719AA)](#whats-new-in-510)
+[![Version](https://img.shields.io/badge/version-5.2.0-7719AA)](#whats-new-in-520)
 
-> **Distribution note:** The supported release artifact is `CopilotHub-v5.1.zip`, attached to the v5.1.0 release. Extract it and run the scripts from the extracted `CopilotHub` folder. This README alone is not a deployable copy of the template.
+> **Distribution note:** The supported release artifact is `CopilotHub-v5.2.zip`, attached to the [v5.2.0 release](https://github.com/MSPFE2019/Copilot-Hub/releases/tag/v5.2.0). Extract it and run the scripts from the extracted `CopilotHub` folder. This README alone is not a deployable copy of the template.
 
-> **Preview:** [See the clickable mockup](https://mspfe2019.github.io/Copilot-Hub/mockup/) of every page and list in a deployed Copilot Hub, generated from the same content as the template. The source file is [`docs/mockup/index.html`](docs/mockup/index.html).
+> **Preview:** [See the clickable mockup](https://mspfe2019.github.io/Copilot-Hub/mockup/) of every page and list in a deployed Copilot Hub. The v5.2 additions are in [`docs/mockup/content-v5.2.js`](docs/mockup/content-v5.2.js), alongside the base mockup in [`docs/mockup/index.html`](docs/mockup/index.html).
 
 **Two design principles:**
 
@@ -23,6 +23,7 @@
 
 ## Table of contents
 
+- [What's new in 5.2.0](#whats-new-in-520)
 - [What's new in 5.1.0](#whats-new-in-510)
 - [Package contents and integrity](#package-contents-and-integrity)
 - [Site structure](#site-structure)
@@ -39,6 +40,18 @@
 - [Roadmap](#roadmap)
 - [References](#references)
 - [License](#license)
+
+---
+
+## What's new in 5.2.0
+
+- **Two new product pages:** [Copilot Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/) and SharePoint agents. Both appear in Copilot tools navigation and the clickable mockup search index.
+- **Updated tool guidance:** the "Which Copilot should I use?" guide and comparison table include Cowork and SharePoint agents. Microsoft Copilot now links to Cowork, and Agents links to SharePoint agents and its quick-start guide.
+- **Licensing and governance links:** Cowork content distinguishes its Microsoft 365 Copilot license, admin spending policy, and Copilot Credits requirements. SharePoint agents content covers the license and site-write requirements to create, license or pay-as-you-go use, content permissions, and the existing Agent lifecycle & approval guidance.
+- **Copilot Studio resources:** current licensing and Copilot Credits links are added to the page, comparison table, and quick links. The deploy script adds both new products to the Product choice column.
+- **Presentation preserved:** the pages use the existing SharePoint page layout, navigation pattern, and branded imagery; the preview is labeled as a local mockup rather than a deployed site.
+
+Microsoft Learn references reviewed for this update: [Copilot Cowork overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/), [Cowork administration and governance](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-admin-governance), [SharePoint agents quick start](https://learn.microsoft.com/en-us/sharepoint/get-started-sharepoint-agents), [manage access to SharePoint agents](https://learn.microsoft.com/en-us/sharepoint/manage-access-agents-in-sharepoint), [SharePoint agents pay-as-you-go](https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/overview), [Copilot Credits](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits), and [Copilot Studio licensing](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing).
 
 ---
 
@@ -77,7 +90,7 @@
 
 ## Package contents and integrity
 
-After extracting `CopilotHub-v5.1.zip`, the package contains:
+After extracting `CopilotHub-v5.2.zip`, the package contains:
 
 ```text
 CopilotHub/
@@ -88,8 +101,8 @@ CopilotHub/
 ├── Seed-PromptLibrary.ps1       # Seeds 12 starter prompts (called by Deploy)
 ├── Apply-Localization.ps1       # Optional: es-ES / fr-FR / de-DE labels
 ├── Test-CopilotHubPackage.ps1   # Offline release check
-├── template.pnp                 # 34 pages, navigation, Events list, 27 image files
-├── VERSION.txt                  # 5.1.0
+├── template.pnp                 # 36 pages, navigation, Events list, 27 image files
+├── VERSION.txt                  # 5.2.0
 ├── localization/                # Optional content packs (see Localization)
 │   ├── README.md
 │   ├── es-ES/content.json
@@ -105,13 +118,13 @@ CopilotHub/
 Before extracting or running administrative scripts, calculate the archive hash and compare it with the SHA-256 value published with the release:
 
 ```powershell
-Get-FileHash .\CopilotHub-v5.1.zip -Algorithm SHA256
+Get-FileHash .\CopilotHub-v5.2.zip -Algorithm SHA256
 ```
 
-For `CopilotHub-v5.1.zip` (v5.1.0), the SHA-256 value is:
+For `CopilotHub-v5.2.zip` (v5.2.0), the SHA-256 value is:
 
 ```text
-7144C1227ED78C455CA865F9A541E7205BD8562E5DFA09C311065302FF93170A
+EE9C902CA877575A6097E648B24F1AB77BE964D04483F6CC5729FDA43A8AEC2F
 ```
 
 Then run the offline release check from the extracted folder. It never connects to SharePoint:
@@ -141,9 +154,11 @@ Home
 │   ├── Compare all tools
 │   ├── Copilot Chat
 │   ├── Microsoft Copilot
+│   ├── Copilot Cowork
 │   ├── Researcher
 │   ├── Analyst
 │   ├── Agents
+│   ├── SharePoint agents
 │   ├── Copilot Studio
 │   ├── Microsoft Foundry
 │   └── GitHub Copilot
@@ -171,13 +186,13 @@ Home
 
 Every top-level item except Home is a label that opens its menu.
 
-### Pages (34)
+### Pages (36)
 
 | Area | Pages |
 | --- | --- |
 | Home and news | Home, plus three launch news posts: *Introducing the Copilot Hub*, *Meet Researcher and Analyst*, *New guide: which Copilot should I use?* |
 | Get started | Get started, Which Copilot should I use?, Request a Copilot license |
-| Copilot tools | Copilot Chat, Microsoft Copilot, Researcher, Analyst, Agents, Copilot Studio, Microsoft Foundry, GitHub Copilot |
+| Copilot tools | Copilot Chat, Microsoft Copilot, Copilot Cowork, Researcher, Analyst, Agents, SharePoint agents, Copilot Studio, Microsoft Foundry, GitHub Copilot |
 | Prompts & agents | Prompt library, Agent catalog |
 | Learn | Guided learning, {CompanyName} office hours, Consultations, Hackathons |
 | Use AI responsibly | Copilot at {CompanyName}, Data protection for Copilot and agents, Agent lifecycle and approval, Where agents are built |
@@ -185,7 +200,7 @@ Every top-level item except Home is a label that opens its menu.
 | Help | Help and learning, Support |
 | Page templates | News, Story, Champion, Hackathon (in `SitePages/Templates`) |
 
-Each product page covers what the tool is, what to use it for, what it works with, where to find it, who can use it, and what to know about safety and governance, with links to the official documentation. Product details were checked against Microsoft and GitHub documentation in September 2026. Names, features, and licensing change often, so plan to review these pages regularly.
+Each product page covers what the tool is, what to use it for, what it works with, where to find it, who can use it, and what to know about safety and governance, with links to official documentation. Product details were checked against Microsoft and GitHub documentation in September and October 2026. Names, features, and licensing change often, so plan to review these pages regularly.
 
 ### Page templates and feeds
 
@@ -227,7 +242,7 @@ The **Learning Paths** list holds 21 of these courses with product, audience, an
 
 ## Localization
 
-The site deploys in English by default. Optional content packs for **Spanish (`es-ES`)**, **French (`fr-FR`)**, and **German (`de-DE`)** under `localization/` translate the navigation, all 27 page titles, the 14 site-column names, the five list titles, and the introductory text on Home, Get started, and GitHub Copilot. Product names are left untranslated.
+The site deploys in English by default. Optional content packs for **Spanish (`es-ES`)**, **French (`fr-FR`)**, and **German (`de-DE`)** under `localization/` translate the navigation, all 29 page titles, the 14 site-column names, the five list titles, and the introductory text on Home, Get started, and GitHub Copilot. Product names are left untranslated.
 
 Apply a pack inline:
 
@@ -312,10 +327,10 @@ Links must start with `https://` or `mailto:`. The deploy script lists every lin
 
 ### Step 0 — Extract and preflight the package
 
-Run the following from the directory containing `CopilotHub-v5.1.zip`:
+Run the following from the directory containing `CopilotHub-v5.2.zip`:
 
 ```powershell
-Expand-Archive .\CopilotHub-v5.1.zip -DestinationPath . -Force
+Expand-Archive .\CopilotHub-v5.2.zip -DestinationPath . -Force
 Set-Location .\CopilotHub
 Get-ChildItem .\Config.psd1, .\Register-PnPApp.ps1, .\Deploy-CopilotHub.ps1, .\Seed-LearningPaths.ps1, .\Seed-PromptLibrary.ps1, .\template.pnp
 .\Test-CopilotHubPackage.ps1
@@ -390,7 +405,7 @@ The script is idempotent. Re-run it to push template changes; existing list data
 | 2b | Hub registration | cmdlet | Only if `RegisterAsHub = $true` |
 | 2c | Site owners | cmdlet | On a new site, adds the deploying user as a site owner so the template can apply |
 | 3 | Connect to the site | cmdlet | Pre-creates `SitePages/Templates` and `SiteAssets/Images` |
-| 4 | Apply the template | `Invoke-PnPSiteTemplate` | 34 pages, navigation, Events list, images. The SiteHeader, SiteFooter, WebSettings, PropertyBagEntries, SiteSettings, Theme, and ComposedLook handlers are excluded because they fail on GCC |
+| 4 | Apply the template | `Invoke-PnPSiteTemplate` | 36 pages, navigation, Events list, images. The SiteHeader, SiteFooter, WebSettings, PropertyBagEntries, SiteSettings, Theme, and ComposedLook handlers are excluded because they fail on GCC |
 | 4b | Hardening | cmdlet / CSOM | Turns off member sharing, SharePoint Designer, and declarative workflows (the template's settings handlers are excluded in phase 4) |
 | 5 | Site columns | cmdlet | 14 columns; adds new choices to existing columns |
 | 6 | Lists | cmdlet | Four lists, their columns, and default view columns |
@@ -463,8 +478,8 @@ The `assets/` folder ships with self-generated PNGs. They are self-contained, wi
 | --- | --- |
 | Package | Required files, `VERSION.txt`, PowerShell syntax |
 | Security | Sharing, Designer, and workflow flags are off in the template **and** enforced by the deploy script; no list webhooks |
-| Content | No double-encoded HTML, unfilled placeholders, lorem ipsum, or carried-over Power Platform text |
-| Links | Every internal link and navigation link resolves to a page; no unreachable pages |
+| Content | No double-encoded HTML, unfilled placeholders, lorem ipsum, or carried-over Power Platform text; includes both new product pages |
+| Links | New product links resolve to Microsoft Learn, and every internal/navigation link resolves to a reachable page |
 | Feeds | Page templates are not tagged for news or highlighted-content feeds |
 | Accessibility | Every banner image has alternative text |
 | Parameters | Every `{parameter:X}` token is supplied by the deploy script |
@@ -472,10 +487,10 @@ The `assets/` folder ships with self-generated PNGs. They are self-contained, wi
 | Events | Category-filtered Events web parts have a matching sample event |
 
 ```powershell
-.\Test-CopilotHubPackage.ps1 -Path ..\CopilotHub-v5.1.zip
+.\Test-CopilotHubPackage.ps1 -Path ..\CopilotHub-v5.2.zip
 ```
 
-Run it before every release; the repository's GitHub Actions workflow runs it on each push. For reference, the 5.0.0 release package fails 12 of the 20 checks that apply to it.
+Run it before every release; the repository's GitHub Actions workflow runs it on each push. Older releases may not pass checks added in later versions; review the per-check output when evaluating them.
 
 ---
 
