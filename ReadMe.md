@@ -42,18 +42,6 @@
 
 ---
 
-## What's new in 5.2.0
-
-- **Two new product pages:** [Copilot Cowork](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/) and SharePoint agents. Both appear in Copilot tools navigation and the clickable mockup search index.
-- **Updated tool guidance:** the "Which Copilot should I use?" guide and comparison table include Cowork and SharePoint agents. Microsoft Copilot now links to Cowork, and Agents links to SharePoint agents and its quick-start guide.
-- **Licensing and governance links:** Cowork content distinguishes its Microsoft 365 Copilot license, admin spending policy, and Copilot Credits requirements. SharePoint agents content covers the license and site-write requirements to create, license or pay-as-you-go use, content permissions, and the existing Agent lifecycle & approval guidance.
-- **Copilot Studio resources:** current licensing and Copilot Credits links are added to the page, comparison table, and quick links. The deploy script adds both new products to the Product choice column.
-- **Presentation preserved:** the pages use the existing SharePoint page layout, navigation pattern, and branded imagery; the preview is labeled as a local mockup rather than a deployed site.
-
-Microsoft Learn references reviewed for this update: [Copilot Cowork overview](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/), [Cowork administration and governance](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-admin-governance), [SharePoint agents quick start](https://learn.microsoft.com/en-us/sharepoint/get-started-sharepoint-agents), [manage access to SharePoint agents](https://learn.microsoft.com/en-us/sharepoint/manage-access-agents-in-sharepoint), [SharePoint agents pay-as-you-go](https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/overview), [Copilot Credits](https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits), and [Copilot Studio licensing](https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing).
-
----
-
 ## Package contents and integrity
 
 After extracting `CopilotHub-v5.2.zip`, the package contains:
