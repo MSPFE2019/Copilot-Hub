@@ -23,8 +23,7 @@
 
 ## Table of contents
 
-- [What's new in 5.2.0](#whats-new-in-520)
-- [What's new in 5.1.0](#whats-new-in-510)
+- [Current release package](https://github.com/MSPFE2019/Copilot-Hub/releases/latest)
 - [Package contents and integrity](#package-contents-and-integrity)
 - [Site structure](#site-structure)
 - [Training tracks](#training-tracks)
