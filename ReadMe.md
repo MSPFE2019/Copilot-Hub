@@ -4,9 +4,9 @@
 
 [![PnP PowerShell](https://img.shields.io/badge/PnP.PowerShell-1.12.x-0078D4?logo=powershell&logoColor=white)](https://pnp.github.io/powershell/)
 [![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-038387?logo=microsoftsharepoint&logoColor=white)](https://learn.microsoft.com/en-us/sharepoint/)
-[![Version](https://img.shields.io/badge/version-5.2.0-7719AA)](#whats-new-in-520)
+[![Latest Release](https://img.shields.io/github/v/release/MSPFE2019/Copilot-Hub?display_name=tag&color=7719AA)](https://github.com/MSPFE2019/Copilot-Hub/releases/latest)
 
-> **Distribution note:** The supported release artifact is `CopilotHub-v5.2.zip`, attached to the [v5.2.0 release](https://github.com/MSPFE2019/Copilot-Hub/releases/tag/v5.2.0). Extract it and run the scripts from the extracted `CopilotHub` folder. This README alone is not a deployable copy of the template.
+> **Distribution note:** Download the supported package from the [latest release](https://github.com/MSPFE2019/Copilot-Hub/releases/latest). Extract it and run the scripts from the extracted `CopilotHub` folder. This README alone is not a deployable copy of the template.
 
 > **Preview:** [See the clickable mockup](https://mspfe2019.github.io/Copilot-Hub/mockup/) of every page and list in a deployed Copilot Hub. The v5.2 additions are in [`docs/mockup/content-v5.2.js`](docs/mockup/content-v5.2.js), alongside the base mockup in [`docs/mockup/index.html`](docs/mockup/index.html).
 
