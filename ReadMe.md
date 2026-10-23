@@ -78,7 +78,7 @@ Get-FileHash .\CopilotHub-v5.2.zip -Algorithm SHA256
 For `CopilotHub-v5.2.zip` (v5.2.7), the SHA-256 value is:
 
 ```text
-E7CB04F60E1B19F38AA27DB8B09697905C5B89DF7493A01E5476D46AE670B98B
+233E44A3CD076A8D8F36A8019F6FE4D987165F6D09063CF9DC0376DC94DCE376
 ```
 
 Then run the offline release check from the extracted folder. It never connects to SharePoint:
