@@ -56,7 +56,7 @@ CopilotHub/
 ├── Apply-Localization.ps1       # Optional: es-ES / fr-FR / de-DE labels
 ├── Test-CopilotHubPackage.ps1   # Offline release check
 ├── template.pnp                 # 36 pages, navigation, Events list, 27 image files
-├── VERSION.txt                  # 5.2.0
+├── VERSION.txt                  # 5.2.7
 ├── localization/                # Optional content packs (see Localization)
 │   ├── README.md
 │   ├── es-ES/content.json
@@ -75,10 +75,10 @@ Before extracting or running administrative scripts, calculate the archive hash 
 Get-FileHash .\CopilotHub-v5.2.zip -Algorithm SHA256
 ```
 
-For `CopilotHub-v5.2.zip` (v5.2.0), the SHA-256 value is:
+For `CopilotHub-v5.2.zip` (v5.2.7), the SHA-256 value is:
 
 ```text
-EE9C902CA877575A6097E648B24F1AB77BE964D04483F6CC5729FDA43A8AEC2F
+E7CB04F60E1B19F38AA27DB8B09697905C5B89DF7493A01E5476D46AE670B98B
 ```
 
 Then run the offline release check from the extracted folder. It never connects to SharePoint:
