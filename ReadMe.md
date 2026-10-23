@@ -54,39 +54,6 @@ Microsoft Learn references reviewed for this update: [Copilot Cowork overview](h
 
 ---
 
-## What's new in 5.1.0
-
-**New and rewritten content**
-
-- **New product pages** for Copilot Chat, Microsoft Copilot, Researcher, Analyst, Agents (Agent Builder and Agent Store), Copilot Studio, and Microsoft Foundry. The GitHub Copilot page was rewritten and added to the menu (in 5.0.0 nothing linked to it).
-- **"Which Copilot should I use?"** — a comparison page with a quick "I want to…" guide, a side-by-side table (best for, who it's for, works with, where you use it, what you need), and guidance on choosing between Agent Builder, Copilot Studio, and Microsoft Foundry.
-- **Prompt library** and **Agent catalog** pages. The deploy script embeds the *Approved prompts* and *Approved agents* list views on them, and seeds 12 reviewed starter prompts.
-- **Governance pages rewritten.** "Copilot at {CompanyName}", "Data protection for Copilot and agents", "Agent lifecycle and approval", and "Where agents are built" replace text carried over from the Power Platform template (environments, flows, Dataverse, connector-only DLP) with accurate Copilot guidance: permissions, sensitivity labels, Purview DLP for Microsoft 365 Copilot and Copilot Chat, SharePoint Advanced Management, agent approval in the Microsoft 365 admin center, and Copilot Studio data policies.
-- **Every other page refreshed** — Get started, Request a Copilot license, Consultations, Internal communities, Support, Office hours, Hackathons, Success stories, Champion of the week, and the four page templates. No placeholders (`<LINK>`, `<COMPANY …>`), lorem ipsum, Yammer references, or Power Platform text remain.
-- **Current product names.** Microsoft 365 Copilot is now Microsoft Copilot, Microsoft 365 Copilot Chat is now Microsoft Copilot Chat, and Azure AI Foundry is now Microsoft Foundry. Pages use the new names and note the old ones; license names still use "Microsoft 365 Copilot".
-- **Launch news.** Three news posts so the home page is not empty on day one.
-
-**Structure and usability**
-
-- **Navigation rebuilt around what people need:** Home · Get started · Copilot tools · Prompts & agents · Learn · Use AI responsibly · Community · Help. Two levels only, so it reads well as a cascading or a mega menu.
-- **Organization links in `Config.psd1`** (`SupportUrl`, `LicenseRequestUrl`, `CommunityUrl`, `OfficeHoursUrl`, `AIPolicyUrl`) are used throughout the pages. Blank values fall back safely, and the deploy reports every fallback it used.
-- **Role-based learning** — Everyone, Agent makers, Admins and IT, Developers, and Leaders and architects — using only current, verified courses. Renamed or off-topic links were replaced.
-- **Lists** gain columns (Prompt, Works in, Description, Open link, Data it uses) and choices (Researcher, Analyst, Microsoft Foundry, GitHub Copilot; Developer, Leader). On re-run, new choices are added to existing columns.
-- **Sample events** fall on weekdays in the month after deployment (the first Tuesday, second Thursday, third Wednesday, and fourth Tuesday–Wednesday), include descriptions and a location, and include an "Office Hours" event so the Office hours page is not empty.
-- **Accessibility:** every banner image has alternative text.
-
-**Fixes**
-
-- **Security settings are now enforced.** The deploy script excludes the template's `WebSettings` and `SiteSettings` handlers (they fail on GCC), so the template's sharing, SharePoint Designer, and workflow values were never applied in any earlier release. Phase 4b now turns off member sharing, SharePoint Designer, and declarative workflows explicitly.
-- **List webhook removed.** 5.0.0 re-introduced a Site Pages webhook (pointing at a push-notification endpoint with a token from the original export) that 4.0.0 had removed.
-- **Lists are no longer added to the site menu.** Earlier releases created the four lists with `-OnQuickLaunch`, which appended raw list links to the navigation on first deployment.
-- **Content feeds work.** 5.0.0 deleted the sample pages that fed Success stories, Champion of the week, and Hackathons, and the page templates were tagged so feeds could display them. Templates are now untagged, and each template tells authors which Page type to set.
-- **Localization works.** `Apply-Localization.ps1` could not rename navigation (it called a cmdlet PnP.PowerShell 1.12 does not have, searched only the hub menu, and did not resolve `{parameter:CompanyName}`), and its intro-text step never found a text web part. Both are fixed, and the packs cover the new navigation, pages, and columns.
-- **Other fixes:** the Environments page no longer shows raw `<p><span>` HTML; the Hackathon template's Register button no longer links to a deleted page; the "Hackthons" typo is fixed; `docs.microsoft.com` and Power Platform-only links are gone; and the deploy script finds PnP.PowerShell in a OneDrive-redirected Documents folder in any organization (it only checked `OneDrive - Microsoft`).
-- **New release check.** `Test-CopilotHubPackage.ps1` catches all of the above. See [Release check](#release-check).
-
----
-
 ## Package contents and integrity
 
 After extracting `CopilotHub-v5.2.zip`, the package contains:
