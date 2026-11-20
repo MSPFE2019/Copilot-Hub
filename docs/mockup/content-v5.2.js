@@ -1,11 +1,11 @@
 const coworkDocs = {
   overview: "https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/",
-  access: "https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-admin-governance",
+  access: "https://learn.microsoft.com/en-us/copilot/cowork/cowork-admin-governance",
   credits: "https://learn.microsoft.com/en-us/microsoft-365/copilot/usage-based-billing-overview-copilot-credits",
   studioBilling: "https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing",
   sharePointStart: "https://learn.microsoft.com/en-us/sharepoint/get-started-sharepoint-agents",
   sharePointAccess: "https://learn.microsoft.com/en-us/sharepoint/manage-access-agents-in-sharepoint",
-  sharePointPayg: "https://learn.microsoft.com/en-us/microsoft-365/copilot/pay-as-you-go/overview",
+  sharePointPayg: "https://learn.microsoft.com/en-us/copilot/plan/pay-as-you-go-overview",
 };
 
 document.querySelector(".mock-note").textContent =
